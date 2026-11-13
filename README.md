@@ -4,6 +4,8 @@
 
 Parallax Protocol is a partial-information dialogue game for [Pollinations Quest #19178](https://github.com/pollinations/pollinations/issues/19178). Two AI agents receive different halves of a distress signal. The player guides their conversation for three exchanges, then chooses the only rescue channel supported by both agents' evidence.
 
+![Parallax Protocol live app](docs/parallax-protocol.png)
+
 ## How it works
 
 - CIPHER and ECHO run on two independently selectable Pollinations text models.
