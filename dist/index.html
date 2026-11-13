@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071317" />
+    <meta name="description" content="Guide two AI agents who hold different halves of a distress signal." />
+    <title>Parallax Protocol — Two minds, one impossible signal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@pollinations/ui@0.1.0-alpha.20/dist/connect.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#relay">Skip to relay console</a>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">P∥P</span><span>Parallax<br />Protocol</span></a>
+      <nav aria-label="Primary"><a href="#relay">Relay</a><a href="#method">Method</a><a href="https://github.com/pollinations/pollinations/issues/19178" target="_blank" rel="noreferrer">Quest #19178 ↗</a></nav>
+      <div class="wallet"><small>RELAY ACCESS</small><polli-connect id="polliConnect" budget="2.5" expiry="7" models="openai/gpt-5.4-nano,deepseek/deepseek-v4.1-flash" hide-buy-pollen menu-links='[{"label":"Quest #19178","href":"https://github.com/pollinations/pollinations/issues/19178","icon":"app"}]'></polli-connect></div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">PARTIAL INFORMATION / LIVE MODEL DIALOGUE</p>
+          <h1 id="hero-title">Two minds.<br />One impossible <em>signal.</em></h1>
+          <p class="lede">CIPHER knows where the message came from. ECHO knows what the message means. Let two AI agents talk, guide what they challenge, then decide which rescue channel is real.</p>
+          <div class="hero-actions"><a class="button primary" href="#relay">OPEN THE RELAY <span>↓</span></a><button class="button ghost" id="heroDemo" type="button">WATCH FREE DEMO</button></div>
+          <div class="microfacts"><span>02 LIVE MODELS</span><span>03 EXCHANGES</span><span>01 SHARED DECISION</span></div>
+        </div>
+        <div class="signal-art" aria-label="Two radio signals converging on a central relay">
+          <div class="scope scope-left"><span>CIPHER</span><i></i><i></i><i></i></div>
+          <div class="scope scope-right"><span>ECHO</span><i></i><i></i><i></i></div>
+          <div class="bridge"><b>?</b><small>SHARED<br />CHANNEL</small></div>
+          <svg viewBox="0 0 760 620" aria-hidden="true"><path class="line-a" d="M72 260 C210 80 260 520 380 310"/><path class="line-b" d="M688 360 C560 540 510 90 380 310"/><circle cx="380" cy="310" r="156"/><circle cx="380" cy="310" r="225"/></svg>
+          <p><span>PARALLAX ARRAY</span> / TWO PRIVATE VIEWS / ONE PUBLIC TRANSCRIPT</p>
+        </div>
+      </section>
+
+      <section class="relay-section" id="relay" aria-labelledby="relay-title">
+        <div class="section-head">
+          <div><p class="eyebrow">LIVE DISTRESS RELAY</p><h2 id="relay-title">Guide the talk.<br /><em>Find the truth.</em></h2></div>
+          <div class="round-counter"><small>EXCHANGES LEFT</small><strong id="roundsLeft">3</strong></div>
+        </div>
+
+        <div class="casebar"><span id="caseId">CASE / NOT OPEN</span><span id="linkState">LINK DORMANT</span></div>
+        <div class="relay-shell">
+          <aside class="agent agent-a">
+            <div class="agent-head"><span class="agent-dot"></span><div><small>AGENT A</small><h3>CIPHER</h3></div></div>
+            <p>Reads the signal's physical origin, cadence and noise. Never sees the rescue registry.</p>
+            <label for="modelA">MODEL</label>
+            <select id="modelA"><option value="openai/gpt-5.4-nano">GPT-5.4 Nano</option><option value="deepseek/deepseek-v4.1-flash">DeepSeek V4.1 Flash</option><option value="z-ai/glm-5.3-flash">GLM-5.3 Flash</option></select>
+            <div class="confidence"><small>CONFIDENCE</small><strong id="confidenceA">—</strong><span><i id="meterA"></i></span></div>
+          </aside>
+
+          <section class="transcript-panel" aria-live="polite">
+            <div class="transcript-head"><span>PUBLIC TRANSCRIPT</span><span id="turnLabel">AWAITING CASE</span></div>
+            <ol id="transcript"><li class="empty"><span>00:00</span><p>No case is open. Start a live relay or watch the zero-Pollen demo.</p></li></ol>
+            <div class="directive">
+              <small>YOUR RELAY DIRECTIVE</small>
+              <div class="directive-grid" role="group" aria-label="Choose a relay directive">
+                <button class="directive-button active" data-nudge="evidence" type="button">ASK FOR EVIDENCE</button>
+                <button class="directive-button" data-nudge="challenge" type="button">CHALLENGE ASSUMPTIONS</button>
+                <button class="directive-button" data-nudge="summary" type="button">FORCE A SUMMARY</button>
+              </div>
+            </div>
+            <div class="relay-actions"><button class="button primary wide" id="startLive" type="button">OPEN LIVE CASE</button><button class="button ghost wide" id="startDemo" type="button">ZERO-POLLEN DEMO</button><button class="button signal wide" id="nextExchange" type="button" disabled>TRANSMIT NEXT EXCHANGE <span>→</span></button><button class="reset" id="resetGame" type="button">RESET RELAY</button></div>
+            <p class="privacy">Each live exchange makes two bounded model requests using the temporary Pollinations key you approve. Only a direct click can spend Pollen. Nothing is stored.</p>
+          </section>
+
+          <aside class="agent agent-b">
+            <div class="agent-head"><span class="agent-dot"></span><div><small>AGENT B</small><h3>ECHO</h3></div></div>
+            <p>Reads the rescue registry, channel rules and failure history. Never sees the raw signal.</p>
+            <label for="modelB">MODEL</label>
+            <select id="modelB"><option value="deepseek/deepseek-v4.1-flash">DeepSeek V4.1 Flash</option><option value="openai/gpt-5.4-nano">GPT-5.4 Nano</option><option value="z-ai/glm-5.3-flash">GLM-5.3 Flash</option></select>
+            <div class="confidence"><small>CONFIDENCE</small><strong id="confidenceB">—</strong><span><i id="meterB"></i></span></div>
+          </aside>
+        </div>
+
+        <section class="decision" id="decision" hidden aria-labelledby="decision-title"><p class="eyebrow">FINAL DECISION / NO MODEL JUDGE</p><h3 id="decision-title">Which rescue channel is supported by both views?</h3><div id="channelChoices" class="channel-choices"></div><p id="outcome" role="status"></p></section>
+      </section>
+
+      <section class="method" id="method" aria-labelledby="method-title">
+        <div class="method-copy"><p class="eyebrow">WHY THIS IS A REAL MULTI-AGENT GAME</p><h2 id="method-title">Conversation changes<br /><em>what each agent can know.</em></h2><p>The models do not receive the same prompt. Each starts with evidence the other cannot see, so useful dialogue—not parallel answers—is the only path to the rescue channel.</p></div>
+        <div class="method-grid"><article><span>01</span><h3>Private evidence</h3><p>One agent gets physical telemetry. The other gets the channel registry. Neither can solve the case alone.</p></article><article><span>02</span><h3>Shared memory</h3><p>Every exchange returns to both models, while your directive changes what they examine next.</p></article><article><span>03</span><h3>Deterministic verdict</h3><p>The incident data fixes the right channel. Code checks your choice, so no AI grades its own story.</p></article></div>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="#top"><span class="brand-mark">P∥P</span><span>Parallax<br />Protocol</span></a><p>Built for Pollinations Quest #19178 · two AIs talk because neither knows enough alone.</p><a href="https://pollinations.ai/?ref=badge" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg" alt="Made with pollinations.ai" /></a></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
